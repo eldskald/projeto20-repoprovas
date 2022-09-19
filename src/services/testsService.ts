@@ -1,4 +1,4 @@
-import { insertTest, findByDiscTermCat } from '../repositories/testsRepository';
+import { insertTest, findByDiscTermCat, findByTeacherCat } from '../repositories/testsRepository';
 import { findCategoryByName } from '../repositories/categoryRepository';
 import { findTDByNames } from '../repositories/teachersDisciplinesRepository';
 import { NewTestData, ParsedNewTestData } from '../types/testTypes';
@@ -19,4 +19,8 @@ export async function newTest(data: NewTestData): Promise<void> {
 
 export async function listByDisciplines() {
   return await findByDiscTermCat();
+}
+
+export async function listByTeachers() {
+  return await findByTeacherCat();
 }
