@@ -1,3 +1,3 @@
-web: node dist/server.js
+web: npm run start
 
-release: npx prisma migrate deploy
+release: npx prisma db seed
