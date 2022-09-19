@@ -1,7 +1,7 @@
-import { insertTest } from '../repositories/testsRepository';
+import { insertTest, findByDiscTermCat } from '../repositories/testsRepository';
 import { findCategoryByName } from '../repositories/categoryRepository';
 import { findTDByNames } from '../repositories/teachersDisciplinesRepository';
-import { Test, NewTestData, ParsedNewTestData } from '../types/testTypes';
+import { NewTestData, ParsedNewTestData } from '../types/testTypes';
 
 export async function newTest(data: NewTestData): Promise<void> {
   const category = await findCategoryByName(data.category);
@@ -15,4 +15,8 @@ export async function newTest(data: NewTestData): Promise<void> {
     teacherDisciplineId: teacherDiscipline.id
   };
   await insertTest(parsedData);
-};
+}
+
+export async function listByDisciplines() {
+  return await findByDiscTermCat();
+}
