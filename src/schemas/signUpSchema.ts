@@ -13,12 +13,12 @@ const signUpSchema: Schema = joi.object({
     }),
   password: joi.string()
     .min(6)
-    .max(16)
+    .max(24)
     .required()
     .messages({
       'string.base': 'Password must be a text',
       'string.min': 'Password must be at least 6 characters long',
-      'string.max': 'Password must be at most 16 characters long',
+      'string.max': 'Password must be at most 24 characters long',
       'any.required': 'Password field is required'
     }),
   passwordConfirm: joi.string()
