@@ -12,12 +12,12 @@ testsRouter.post(
   postTest
 );
 testsRouter.get(
-  '/tests/by-disciplines',
+  '/tests/by-discipline',
   tokenValidation,
   getByCategory
 );
 testsRouter.get(
-  '/tests/by-teachers',
+  '/tests/by-teacher',
   tokenValidation,
   getByTeacher
 );
